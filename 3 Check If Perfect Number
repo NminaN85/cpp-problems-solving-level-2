@@ -1,0 +1,42 @@
+
+#include <iostream>
+using namespace std;
+
+
+int GetPossitiveNumber(string Message) {
+	int Number;
+	do {
+		cout<<Message;
+		cin >> Number;
+	} while (Number <= 0);
+	return Number;
+}
+
+
+
+bool IsPerfect(int Number) {
+	int sum = 0;
+	for (int counter = 1; counter < Number; counter++) {
+		if (Number % counter == 0)
+			sum = sum + counter;
+	}
+	return Number == sum;
+}
+
+void PrintPerfectNumbersFrom1ToNumber(int Number) {
+
+	cout << Number << " Is ";
+	if (IsPerfect(Number)) {
+		cout << " Perfect Number ";
+	}
+	else cout << "Not Perfect ";
+
+}
+
+
+int main()
+{
+
+	PrintPerfectNumbersFrom1ToNumber(GetPossitiveNumber("Please enter a number : "));
+}
+
