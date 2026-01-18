@@ -11,7 +11,7 @@
 ![C++](https://img.shields.io/badge/Language-C++-blue?style=for-the-badge&logo=cplusplus)
 ![Level](https://img.shields.io/badge/Level-2-success?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/USERNAME/cpp-problems-solving-level-2?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/آةهىشآ85/cpp-problems-solving-level-2?style=for-the-badge)
 
 </div>
 
