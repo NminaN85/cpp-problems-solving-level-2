@@ -1,0 +1,41 @@
+
+#include <iostream>
+using namespace std;
+
+enum enIsPrimeNumber { Prime = 1 , NotPrime = 0};
+
+int GetPossitiveNumber(string Message) {
+	int Number;
+	do {
+		cout<<Message;
+		cin >> Number;
+	} while (Number <= 0);
+	return Number;
+}
+
+enIsPrimeNumber IsPrime(int Number) {
+	int HalfNumber = round(Number/2);
+	for (int counter = 2; counter <= HalfNumber; counter++) {
+		if (Number % counter == 0) 
+			return enIsPrimeNumber::NotPrime;
+	}
+	return enIsPrimeNumber::Prime;
+}
+
+void PrintPrimeNumbersFrom1ToNumber(int Number) {
+	cout << endl << "Prime Numbers From " << 1 << " To " << Number << "Are " << endl;
+
+	for (int i = 1; i <= Number; i++) {
+		if (IsPrime(i) == enIsPrimeNumber::Prime) {
+			cout << i << endl;
+		}
+	}
+}
+
+
+int main()
+{
+
+	PrintPrimeNumbersFrom1ToNumber(GetPossitiveNumber("Please enter a number : "));
+}
+
