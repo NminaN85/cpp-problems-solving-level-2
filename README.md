@@ -2,7 +2,7 @@
 
 # 🚀 C++ Problem Solving – Level 2  
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdG5xZzV0OG9kZXNqY3ZrcDN0NDR2c2U3MWl3cmR5ODF4ZmN4Yml4ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/LMt9638dO8dftAjtco/giphy.gif" width="300"/>
+<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="300"/>
 
 ---
 
