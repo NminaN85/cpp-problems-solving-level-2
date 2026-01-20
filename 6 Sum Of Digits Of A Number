@@ -12,7 +12,7 @@ int GetPossitiveNumber(string Message) {
 	return Number;
 }
 
-void PrintDigits(int Number){
+int SumOfDigits(int Number){
 int Remainder = 0;
 int sum = 0;
 
@@ -20,11 +20,11 @@ while (Number > 0) {
 	Remainder = Number % 10; 
 	sum += Remainder;
 	Number = Number / 10;
-	cout << Remainder << endl;
-
-	
 }
-cout << "Sum of Digits " << sum << endl;
+return sum;
+}
+void PrintSumOfDigits(int sum) {
+	cout << "Sum of Digits " << sum << endl;
 }
 
 
@@ -32,6 +32,6 @@ cout << "Sum of Digits " << sum << endl;
 int main()
 {
 
-	PrintDigits(GetPossitiveNumber("Please enter a number : "));
+	PrintSumOfDigits(SumOfDigits(GetPossitiveNumber("Please enter a number : ")));
 }
 
