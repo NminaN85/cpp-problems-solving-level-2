@@ -1,0 +1,48 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int GetPossitiveNumber(string Message) {
+	int Number;
+	do {
+		cout<<Message;
+		cin >> Number;
+	} while (Number <= 0);
+	return  Number;
+}
+
+int GetReverse(int Number , int NumberToCount){
+int Remainder = 0;
+int Frequancy = 0;
+
+while (Number > 0) {
+	Remainder = Number % 10;
+	Number = Number / 10;
+	if (NumberToCount == Remainder)
+		Frequancy++;
+
+}
+
+return Frequancy;
+
+}
+
+
+
+
+int main()
+{
+	int Number = GetPossitiveNumber("Please enter a number : ");
+
+	int NumberToCount = GetPossitiveNumber("which Number you want to count  : ");
+
+
+	cout << "Frequancy of " << NumberToCount <<  " In "<<Number << "  is  : " << GetReverse(Number, NumberToCount) << endl;
+
+
+
+	return 0;
+}
+
