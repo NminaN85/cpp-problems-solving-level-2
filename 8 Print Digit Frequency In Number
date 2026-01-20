@@ -13,7 +13,7 @@ int GetPossitiveNumber(string Message) {
 	return  Number;
 }
 
-int GetReverse(int Number , int NumberToCount){
+int GetFrequancy(int Number , int NumberToCount){
 int Remainder = 0;
 int Frequancy = 0;
 
@@ -39,7 +39,7 @@ int main()
 	int NumberToCount = GetPossitiveNumber("which Number you want to count  : ");
 
 
-	cout << "Frequancy of " << NumberToCount <<  " In "<<Number << "  is  : " << GetReverse(Number, NumberToCount) << endl;
+	cout << "Frequancy of " << NumberToCount <<  " In "<<Number << "  is  : " << GetFrequancy(Number, NumberToCount) << endl;
 
 
 
