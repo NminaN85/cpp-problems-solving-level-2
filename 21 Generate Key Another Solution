@@ -1,0 +1,96 @@
+
+#include <iostream>
+#include<string>
+#include<cstdlib>
+#include <ctime>
+using namespace std;
+
+enum enRandom {
+	CapitalLetter = 1,
+	SamallLetter = 2,
+	Digit = 3,
+	SpecialCharacter = 4
+};
+
+int RandomNumber(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+char GetRandomCharacter(enRandom CharType) {
+
+	switch (CharType) {
+	case enRandom::SamallLetter:
+	{
+		return char(RandomNumber(97, 122));
+		break;
+	}
+	case enRandom::CapitalLetter:
+	{
+		return char(RandomNumber(65, 90));
+		break;
+	}
+	case enRandom::Digit:
+	{
+		return char(RandomNumber(48, 57));
+		break;
+	}
+	case enRandom::SpecialCharacter:
+	{
+		return char(RandomNumber(33, 47));
+		break;
+	}
+	}
+}
+
+int ReadPossitiveNumber(string Message) {
+	int NumberOfKeys;
+	do {
+		cout << Message;
+		cin >> NumberOfKeys;
+	} while (NumberOfKeys <= 0);
+	return  NumberOfKeys;
+}
+string GenerateWord(enRandom CharType, short length) {
+
+		string Word = "";
+
+		for (int i = 1; i <= length; i++) 
+		{
+			Word = Word + GetRandomCharacter(CharType);
+		}
+
+		return Word;
+		
+	}
+string GenerateKey() {
+	string Key;
+
+	Key = GenerateWord(enRandom::CapitalLetter, 4) + "-";
+	Key = Key + GenerateWord(enRandom::CapitalLetter, 4) + "-";
+	Key = Key + GenerateWord(enRandom::CapitalLetter, 4) + "-";
+	Key = Key + GenerateWord(enRandom::CapitalLetter, 4);
+
+
+	return Key;
+
+}
+void GenerateKeys( short NumberOfKeys) {
+	for (int i = 1; i <= NumberOfKeys; i++) {
+
+		cout << "Key [" << i << "] : ";
+		cout << GenerateKey()<<endl;
+
+	}
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	GenerateKeys(ReadPossitiveNumber("How Many Keys ?"));
+	
+
+}
+
