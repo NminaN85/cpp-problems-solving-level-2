@@ -1,0 +1,61 @@
+
+#include <iostream>
+#include<string>
+#include<cstdlib>
+#include <ctime>
+using namespace std;
+
+
+int ReadPossitiveNumber(string Message) {
+	int Number;
+	do {
+		cout << Message;
+		cin >> Number;
+	} while (Number <= 0);
+	return  Number;
+}
+void ReadArry(int Arr[100], int& ArrLength) {
+	
+	cout << "enter arry legth :" << endl;
+	cin >> ArrLength;
+
+	cout << "enter Arry Elements : "<<endl;
+
+	for (int i = 1; i <= ArrLength; i++) {
+		cout << "elemente [" << i << " ] : ";
+		cin >> Arr[i];
+	}
+	cout << endl;
+}
+void PrintArry(int Arr[100], int Arrlength) {
+	for (int i = 1; i <= Arrlength; i++) {
+		cout << Arr[i];
+	}
+}
+int TimesRepeats(int Number ,int Arr[100], int Arrlength) {
+	int counter = 0;
+	for (int i = 0; i <= Arrlength-1; i++) {
+		if (Number == Arr[i])
+		counter++;
+	}return counter;
+}
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	int Arr[100];
+	int Arrlength;
+	int NumberToCheck;
+
+	ReadArry(Arr, Arrlength);
+
+	NumberToCheck = ReadPossitiveNumber("which elemmente you want to check ?");
+	cout << "Original Arry Is : ";
+	PrintArry(Arr, Arrlength);
+
+	cout << "\n Number is " << NumberToCheck;
+	cout << " Is repeated ";
+	cout << TimesRepeats(NumberToCheck, Arr, Arrlength);
+
+}
+
