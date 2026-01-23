@@ -1,0 +1,52 @@
+
+#include <iostream>
+#include<string>
+#include<cstdlib>
+#include <ctime>
+using namespace std;
+
+int GetNumberOfKeys() {
+	int NumbersOfKeys;
+	cout << "How many Keys Do You Need ?";
+	cin >> NumbersOfKeys;
+
+	return NumbersOfKeys;
+}
+
+int RandomNumber()
+{
+
+	int RandNum = rand() % (90 - 65 + 1) + 65;
+	return RandNum;
+}
+
+void GetKeys(int NumbersOfKeys ) {
+
+	for (int i = 1; i <= NumbersOfKeys; i++) {
+
+		cout<<"\n";
+		cout << "Key [ " << i << " ] : ";
+
+		for (int j = 1; j <= 4; j++) {
+			
+			for (int g = 1 ; g <= 4; g++) 
+				cout << (char)RandomNumber();
+				if (j != 4)
+					cout << "-";
+
+			}
+		}cout << endl;
+			//cout <<  (char) RandomNumber() << (char)RandomNumber() << (char)RandomNumber() << (char)RandomNumber() << "-";
+
+	}
+	
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	GetKeys(GetNumberOfKeys());
+	
+	
+
+}
+
