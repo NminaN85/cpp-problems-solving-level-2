@@ -1,0 +1,33 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+
+void PrintWordsFromAAAToZZZ() {
+
+	cout << "\n";
+
+	for (int i = 65; i <= 90; i++) {
+		for (int j = 65 ; j <= 90 ; j++) {
+			for (int x = 65; x <= 90; x++) {
+				cout << (char)i<<(char)j <<(char)x;cout << "\n";
+			}
+			
+		}
+	}
+
+}
+
+
+
+int main()
+{
+	PrintWordsFromAAAToZZZ();
+			
+		
+
+	return 0;
+}
+
