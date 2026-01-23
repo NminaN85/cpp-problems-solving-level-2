@@ -1,0 +1,43 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int GetPossitiveNumber(string Message) {
+	int Number;
+	do {
+		cout << Message;
+		cin >> Number;
+	} while (Number <= 0);
+	return  Number;
+}
+
+void PrintLetterPattern(int Number) {
+
+	cout << "\n";
+
+	for (int i = 65; i <= (64 + Number); i++)
+	{
+		for (int j = 1; j <= (i - 64); j++)
+
+		{
+           cout << (char)i;
+		}
+			cout << "\n";
+		}
+	
+}
+
+
+
+int main()
+{
+
+	PrintLetterPattern(GetPossitiveNumber("Please enter a number : "));
+			
+		
+
+	return 0;
+}
+
