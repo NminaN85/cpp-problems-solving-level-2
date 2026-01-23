@@ -1,0 +1,57 @@
+
+#include <iostream>
+#include<string>
+
+using namespace std;
+
+string ReadWord() {
+	string Word;
+
+	cout << "Please Enter A Word " << endl;
+	getline(cin, Word);
+
+
+		return Word;
+
+}
+
+string Encryption(string Word , short encryptionKey) {
+	
+	for (int i = 0 ; i <= Word.length(); i++) {
+
+		Word[i] = char((int)Word[i] + encryptionKey);
+	}
+	return Word;
+}
+
+
+string Decryption(string Word, short encryptionKey) {
+
+	for (int i = 0; i <= Word.length(); i++) {
+
+		Word[i] = char((int)Word[i] - encryptionKey);
+	}
+	return Word;
+}
+
+
+
+int main()
+
+	
+
+{
+	short encryptionKey = 2;
+	string Text = ReadWord();
+	string TextAfterEncryption = Encryption(Text, encryptionKey);
+	string TextBeforEncryption = Decryption(Text, encryptionKey);
+
+
+	cout << "Your Word was " << Text << endl;
+	cout<<"the word after encryption is  "<< TextAfterEncryption<<endl;
+	cout << "the word Befor encryption is  " << TextBeforEncryption<<endl;
+
+
+	return 0;
+}
+
