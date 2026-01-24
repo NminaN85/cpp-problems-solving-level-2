@@ -1,0 +1,57 @@
+#include <iostream>
+#include<string>
+#include<cstdlib>
+#include <ctime>
+using namespace std;
+
+
+
+int RandomNumber(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+
+void ReadArry(int Arry[100] ,  int &ArryLength) {
+
+	cout << "Please Enter Number of Elements : ";
+	cin >> ArryLength;
+
+	for (int i = 0; i < ArryLength; i++) {
+		Arry[i]= RandomNumber(1, 100);
+	}
+}
+void PrintArry(int Arry[100], int ArryLength) {
+	for (int i = 0; i < ArryLength; i++) {
+		cout << Arry[i]  ;
+		if (i < ArryLength - 1) cout << " , ";
+		else cout << " ";
+	}
+}
+void CopyArray(int ArrSource[100], int ArrDestination[100], int ArryLength) {
+	for (int i = 0; i < ArryLength; i++) 
+		ArrDestination[i] = ArrSource[i];
+	
+}
+
+
+int main() {
+	srand((unsigned)time(NULL));
+
+	int Arry[100];
+	int ArryLength;
+	int Sum;
+	
+	ReadArry(Arry, ArryLength);
+	int Arr2[100];
+	CopyArray(Arry, Arr2, ArryLength);
+	cout << " Arry Is : [ ";
+	PrintArry(Arry, ArryLength);
+	cout<<" ]"<<endl;
+	cout << " Coppied Array : [ ";
+	PrintArry(Arr2, ArryLength);
+	cout << " ]" << endl;
+	return 0;
+}
