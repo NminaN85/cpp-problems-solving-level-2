@@ -5,7 +5,6 @@
 #include <ctime>
 using namespace std;
 
-
 int ReadPossitiveNumber(string Message) {
 	int Number;
 	do {
@@ -14,29 +13,25 @@ int ReadPossitiveNumber(string Message) {
 	} while (Number <= 0);
 	return  Number;
 }
-void ReadArry(int Arr[100], int& ArrLength) {
-	
-	cout << "enter arry legth :" << endl;
-	cin >> ArrLength;
-
-	cout << "enter Arry Elements : "<<endl;
-
-	for (int i = 1; i <= ArrLength; i++) {
-		cout << "elemente [" << i << " ] : ";
-		cin >> Arr[i];
-	}
-	cout << endl;
+void ReadArry(int Arry[100], int& ArryLength) { 
+	cout << "Please Enter Arry Length : ";
+	cin >> ArryLength; 
+	cout << "Please Enter Elements " << endl; 
+	for (int i = 0; i < ArryLength; i++) { 
+		cout << "Element [ " << (i + 1) << " ] : " << endl;
+		cin >> Arry[i];
+	} cout << endl; 
 }
-void PrintArry(int Arr[100], int Arrlength) {
-	for (int i = 1; i <= Arrlength; i++) {
-		cout << Arr[i];
+void PrintArry(int Arry[100], int ArryLength) {
+	for (int i = 0; i < ArryLength; i++) {
+		cout << Arry[i] << " ";
 	}
 }
-int TimesRepeats(int Number ,int Arr[100], int Arrlength) {
+int TimesRepeats(int Number, int Arr[100], int Arrlength) {
 	int counter = 0;
-	for (int i = 0; i <= Arrlength-1; i++) {
+	for (int i = 0; i < Arrlength; i++) {
 		if (Number == Arr[i])
-		counter++;
+			counter++;
 	}return counter;
 }
 int main()
